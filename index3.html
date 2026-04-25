@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Jagadeesh | Full Stack Developer</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+            rel="stylesheet">
+
+        <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
+
+body.dark{background:#020617;color:#fff;}
+body.light{background:#f8fafc;color:#000;}
+
+header{
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 10%;position:sticky;top:0;z-index:1000;
+backdrop-filter:blur(10px);
+}
+body.dark header{background:rgba(0,0,0,0.4);}
+body.light header{background:rgba(255,255,255,0.8);}
+
+nav a{margin-left:15px;text-decoration:none;color:inherit;font-size:14px;}
+
+.toggle{cursor:pointer;background:#38bdf8;padding:5px 10px;border-radius:15px;}
+
+section{padding:70px 10%;}
+
+h1 span{color:#38bdf8;}
+
+/* PROFILE IMAGE */
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 0 25px #38bdf8;
+    transition: 0.4s;
+}
+
+.profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px #38bdf8;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .home-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.btn{
+display:inline-block;margin:10px 10px 0 0;padding:10px 18px;
+background:#38bdf8;color:#000;border-radius:20px;text-decoration:none;
+transition:0.3s;font-size:14px;
+}
+.btn:hover{transform:translateY(-3px);}
+
+.card{
+padding:20px;border-radius:12px;margin-top:20px;
+text-align: left;
+background:rgba(255,255,255,0.05);
+transition:0.3s;
+}
+.card a{
+    color: white;
+    text-decoration: none;
+}
+
+body.light .card{background:#fff;}
+
+.card:hover{transform:translateY(-6px);}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.skills span{
+display:inline-block;margin:5px;padding:8px 12px;
+border-radius:20px;background:#1e293b;
+}
+body.light .skills span{background:#e2e8f0;}
+
+.fade{opacity:0;transform:translateY(20px);transition:0.8s;}
+.fade.show{opacity:1;transform:translateY(0);}
+
+footer{text-align:center;padding:20px;font-size:14px;}
+
+
+</style>
+    </head>
+
+    <body class="dark">
+
+        <header>
+            <h2>Jagadeesh Bobbili</h2>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+                <span class="toggle" onclick="toggleTheme()">🌙</span>
+            </nav>
+        </header>
+
+        <!-- HERO -->
+
+        <section id="home">
+            <div class="home-container">
+
+                <!-- LEFT SIDE TEXT -->
+                <div>
+                    <h1>Hi, I'm <span>Jagadeesh Bobbili</span></h1>
+                    <h3 class="typing"></h3>
+                    <p>Java Full Stack Developer building scalable and
+                        user-friendly web applications.</p>
+
+                    <a href="Java Full Stack Resume 2.pdf" download
+                        class="btn">📄 Resume</a>
+                    <a href="https://github.com/" target="_blank"
+                        class="btn">GitHub</a>
+                    <a
+                        href="https://www.linkedin.com/in/jagadeesh-bobbili-70b3012ba/"
+                        target="_blank" class="btn">LinkedIn</a>
+                </div>
+
+                <!-- RIGHT SIDE IMAGE -->
+                <div class="profile-img">
+                    <img src="Passport Img.jpg" alt="Jagadeesh Profile Photo">
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="fade">
+        <div class="card">
+            <h2>About Me</h2>
+            <p>
+               I am a passionate Full Stack Developer and MCA student at Andhra University, with a strong foundation in both front-end and back-end web development. I enjoy building responsive, user-friendly web applications and continuously learning new technologies to improve my development skills. <br> <br>
+               My technical expertise includes Java, JavaScript, HTML, CSS, React.js, Spring Boot, Hibernate, JDBC, and MySQL. I have hands-on experience in developing web applications and Java-based systems by applying Object-Oriented Programming principles, database management, and modern web development practices.
+               <br> <br>I have developed several projects such as a Village Information Website using React.js, a Movie Web Application, a Student Management System, and a Bank Management System using Java, JDBC, and MySQL, where I implemented features like CRUD operations, responsive design, dynamic content handling, and database integration.
+               <br>I am always open to connecting with professionals, learning from experienced developers, and collaborating on innovative projects. <br><br>
+           📌 Skills: Java | React.js | Spring Boot |  Hibernate | MySQL | JDBC | HTML | CSS | JavaScript | Git | GitHub
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="fade">
+        <h2>Skills</h2>
+        <div class="skills">
+            <span>Java</span><span>Spring Boot</span><span>Spring</span><span>Hibernate</span>
+            <span>Gen Ai</span><span>Prompt Engineering</span>
+            <span>Jdbc</span><span>WebApplications</span>
+            <span>NoSQL</span><span>MongoDB</span>
+            <span>React</span><span>JavaScript</span>
+            <span>HTML</span><span>CSS</span>
+            <span>MySQL</span><span>Git</span>
+            
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="fade">
+        <h2>Projects</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3>Mana_Cheedikada Village Website </h3><br>
+                <p>1.Front-End Web Application | HTML, CSS, JavaScript, React Js <br><br>
+2.Designed multiple web pages with structured layouts and smooth navigation, using DOM. <br><br>
+3.Implemented image gallery, dynamic content updates, and contact form validation</p>
+               
+            </div>
+            <div class="card">
+                <h3>Bank Management System </h3>
+                <br>
+                <p>Java | JDBC | MySQL  <br><br>
+1. Developed a console-based application to manage student records. <br><br>
+2. Implemented CRUD operations using JDBC and MySQL database. <br><br>
+3. Designed modular classes following OOP principles.</p>
+               
+            </div>
+
+            <div class="card">
+                <h3>Movie Web Application | React.js  </h3>
+                <br>
+                <p>1. Developed a responsive movie web application using React.js, HTML, CSS, and JavaScript. <br><br>
+2. Implemented reusable components and state management using React Hooks. <br><br>
+3. Integrated movie search functionality with dynamic filtering.</p>
+               
+            </div>
+            <div class="card">
+                <h3>Student Management System</h3><br>
+                <p>Java | JDBC | MySQL  <br><br>
+1. Developed a console-based application to manage student records. <br><br>
+2. Implemented CRUD operations using JDBC and MySQL database.  <br><br>
+3. Designed modular classes following OOP principles.</p>
+              
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="fade">
+        <h2>Certifications</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3>Frontend Development Internship</h3><br>
+                <p>HTML, CSS, JavaScript</p>
+                <p>Certified By Cognifyz Technologies</p>
+            </div>
+
+            <div class="card">
+                <h3>Python Programming Internship</h3><br>
+                <p>Core Python & project development</p>
+                <p>Certified By YR Technologies</p>
+            </div>
+             <div class="card">
+                <h3>Full Stack Web Developement</h3><br>
+                <p>Complete Full Stack Developement</p>
+                <p>Certified By Udemy</p>
+            </div>
+            <div class="card">
+                <h3>Completed Introduction with Prompt Engineering GitHub copilot</h3><br>
+                <p>Certified By Microsoft (Simplelearn)</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade">
+        <div class="card">
+            <h2>Contact</h2>
+
+            <p><strong>Name:</strong> Jagadeesh Bobbili</p>
+            <p><strong>Email:</strong> <a
+                    href="mailto:jagadeeshbobbili66@gmail.com">jagadeeshbobbili66@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:7075281019">+91
+                    7075281019</a></p>
+
+            <br>
+
+            <a href="https://github.com/" class="btn">GitHub</a>
+            <a href="https://www.linkedin.com/in/jagadeesh-bobbili-70b3012ba/"
+                class="btn">LinkedIn</a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Jagadeesh | Full Stack Developer</p>
+    </footer>
+
+    <script>
+function toggleTheme(){
+document.body.classList.toggle("light");
+localStorage.setItem("theme",document.body.className);
+}
+window.onload=()=>{document.body.className=localStorage.getItem("theme")||"dark";}
+
+/* typing */
+const roles=["Java Full Stack Developer","Full Stack Developer","Web Developer"];
+let i=0,j=0,cur="",del=false;
+function type(){
+cur=roles[i];
+document.querySelector(".typing").textContent=cur.substring(0,j);
+if(!del&&j<cur.length){j++;setTimeout(type,100);}
+else if(del&&j>0){j--;setTimeout(type,50);}
+else{del=!del;if(!del)i=(i+1)%roles.length;setTimeout(type,1000);}
+}
+type();
+
+/* scroll animation */
+const f=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+f.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-80){
+el.classList.add('show');
+}
+});
+});
+</script>
+
+</body>
+</html>

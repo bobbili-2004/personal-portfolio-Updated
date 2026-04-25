@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagadeesh Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* THEME COLORS */
+body.dark {
+    background: linear-gradient(135deg, #020617, #0f172a);
+    color: white;
+}
+
+body.light {
+    background: #f1f5f9;
+    color: black;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+}
+
+body.dark header {
+    background: rgba(0,0,0,0.3);
+}
+
+body.light header {
+    background: rgba(255,255,255,0.7);
+}
+
+header h2 {
+    color: #38bdf8;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* BUTTON */
+.btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* TOGGLE */
+.toggle {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #38bdf8;
+    color: black;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 10%;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+body.dark .card {
+    background: rgba(255,255,255,0.05);
+}
+
+body.light .card {
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* SKILLS */
+.skills-list span {
+    display: inline-block;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 20px;
+    background: #1e293b;
+}
+
+body.light .skills-list span {
+    background: #e2e8f0;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body class="dark">
+
+<header>
+    <h2>JAGADEESH</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+        <span class="toggle" onclick="toggleTheme()">🌙</span>
+    </nav>
+</header>
+
+<section id="home" class="fade">
+    <h1>Hi, I'm <span style="color:#38bdf8;">Jagadeesh</span></h1>
+    <h3 class="typing"></h3>
+    <p>Aspiring Full Stack Developer</p>
+
+    <!-- Resume Button -->
+    <a href="Java Full Stack Resume 2.pdf" download class="btn">📄 Download Resume</a>
+</section>
+
+<section id="about" class="fade">
+    <div class="card">
+        <h2>About Me</h2>
+        <p>Paste your full about content here (your long description fits perfectly).</p>
+    </div>
+</section>
+
+<section id="skills" class="fade">
+    <h2>Skills</h2>
+    <div class="skills-list">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>MySQL</span>
+    </div>
+</section>
+
+<section id="projects" class="fade">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>Login System</h3>
+        <p>Java + JDBC + MySQL</p>
+    </div>
+
+    <div class="card">
+        <h3>Student Management</h3>
+        <p>CRUD Application</p>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS SECTION -->
+<section id="certifications" class="fade">
+    <h2>Certifications</h2>
+
+    <div class="card">
+        <h3>Frontend Development Internship</h3>
+        <p>Completed training in HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="card">
+        <h3>Python Programming Internship</h3>
+        <p>Worked on core Python concepts and projects</p>
+    </div>
+
+</section>
+
+<section id="contact" class="fade">
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Email: yourmail@gmail.com</p>
+        <p>Phone: +91 XXXXX XXXXX</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Jagadeesh</p>
+</footer>
+
+<script>
+/* THEME TOGGLE */
+function toggleTheme() {
+    document.body.classList.toggle("light");
+    document.body.classList.toggle("dark");
+}
+
+/* TYPING EFFECT */
+const roles = ["Java Developer", "Full Stack Developer", "Web Developer"];
+let i=0,j=0,current="",deleting=false;
+
+function type(){
+    current = roles[i];
+    document.querySelector(".typing").textContent = current.substring(0,j);
+
+    if(!deleting && j<current.length){
+        j++;
+        setTimeout(type,100);
+    } else if(deleting && j>0){
+        j--;
+        setTimeout(type,50);
+    } else {
+        deleting = !deleting;
+        if(!deleting) i=(i+1)%roles.length;
+        setTimeout(type,1000);
+    }
+}
+type();
+
+/* SCROLL ANIMATION */
+const faders = document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+    faders.forEach(el=>{
+        if(el.getBoundingClientRect().top < window.innerHeight-100){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
